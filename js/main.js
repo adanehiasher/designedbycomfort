@@ -25,10 +25,12 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link, .mobile-cta');
 
 // Toggle menu on hamburger click
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close menu when a link is clicked
 navLinks.forEach(link => {
@@ -103,6 +105,8 @@ function switchTestimonial(index) {
     const titleElement = document.getElementById('testimonial-title');
     const tabs = document.querySelectorAll('.testimonial-tab');
 
+    if (!textElement || !nameElement || !titleElement) return;
+
     // Update current index for auto-slide
     currentTestimonialIndex = index;
 
@@ -139,7 +143,9 @@ function switchTestimonial(index) {
 }
 
 // Initial start
-startTestimonialAutoSlide();
+if (document.getElementById('testimonial-text')) {
+    startTestimonialAutoSlide();
+}
 
 // Scroll Reveal Animation Logic
 const revealElements = document.querySelectorAll('.reveal');

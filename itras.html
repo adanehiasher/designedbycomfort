@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap" rel="stylesheet">
+    <title>ITRAS Case Study - DesignedByComfort</title>
+    <style>
+        .case-study-hero {
+            padding: 8rem 2rem 4rem;
+            background-color: var(--white);
+            text-align: left;
+        }
+
+        .case-study-hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .case-study-tag {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .case-study-title {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .case-study-main-image {
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+            border-radius: 0;
+            margin-bottom: 4rem;
+        }
+
+        .flagship-section {
+            padding: 0 !important;
+        }
+
+        .flagship-container {
+            max-width: 100% !important;
+            padding: 0 !important;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .case-study-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+            opacity: 0.6;
+        }
+
+        .case-study-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-detail-section {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .detail-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .case-study-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .full-width-gallery {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-title {
+                font-size: 3rem;
+            }
+
+            .case-study-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .case-study-main-image {
+                height: 50vh;
+                border-radius: 0;
+            }
+
+            .case-study-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width-gallery {
+                grid-column: span 1;
+            }
+
+            .gallery-img {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <div class="navbar-logo">
+                    <a href="index.html">
+                        <img src="img/dbc logo-blacl.svg" alt="dbc logo">
+                    </a>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="mobile-menu-header">
+                    <div class="navbar-logo">
+                        <a href="index.html">
+                            <img src="img/dbc logo-blacl.svg" alt="dbc logo">
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link mobile-nav-link">services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link mobile-nav-link">contact us</a>
+                </li>
+                <li class="mobile-menu-footer">
+                    <a href="index.html#contact" class="start-project-btn mobile-cta"
+                        style="text-decoration: none; display: block;">start a project</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <div class="time-display">
+                    <span id="nigeria-time">--:-- --</span>
+                </div>
+            </div>
+            <div class="hamburger">
+                <img src="img/menu.png" alt="menu">
+                <img src="img/close.png" alt="close">
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="case-study-hero">
+            <div class="case-study-hero-container">
+                <span class="case-study-tag reveal">Strategy & Infrastructure</span>
+                <h1 class="case-study-title reveal">ITRAS: Engineering Efficiency.</h1>
+            </div>
+        </section>
+
+        <section class="image-section flagship-section reveal">
+            <div class="image-container flagship-container">
+                <img src="img/itras.svg" alt="ITRAS Flagship Image" class="case-study-main-image">
+            </div>
+        </section>
+
+        <section class="case-study-grid reveal">
+            <div class="case-study-info">
+                <div class="info-item">
+                    <h4>Client</h4>
+                    <p>ITRAS Consultancy</p>
+                </div>
+                <div class="info-item">
+                    <h4>Year</h4>
+                    <p>2024</p>
+                </div>
+                <div class="info-item">
+                    <h4>Services</h4>
+                    <p>Strategic Branding, Transport Consultancy Identity</p>
+                </div>
+            </div>
+            <div class="case-study-overview">
+                <p class="detail-text">
+                    ITRAS is a premier consultancy firm specialising in providing innovative solutions to the transport
+                    sector. Our expertise lies in developing comprehensive strategies and implementing effective
+                    reforms to enhance efficiency and sustainability.
+                </p>
+                <p class="detail-text">
+                    We offer a wide range of services, including transport policy formulation, master planning, and
+                    institutional framework harmonisation. Our goal is to assist clients in addressing complex
+                    transportation challenges and achieving their objectives on a global scale.
+                </p>
+            </div>
+        </section>
+
+        <section class="case-study-detail-section reveal">
+            <div class="detail-container">
+                <h2 class="detail-section-title">The Design Challenge</h2>
+                <p class="detail-text">
+                    The challenge was to position a consultancy firm as a high-tech, forward-thinking leader in a
+                    traditionally conservative sector.
+                    <br>
+                    <strong>Complexity Simplified:</strong> How do you represent complex logistics and transport systems
+                    in a way that feels clear, efficient, and sophisticated?
+                    <br>
+                    <strong>Trust & Innovation:</strong> Creating a brand that communicates deep institutional knowledge
+                    while simultaneously signaling modern innovation.
+                </p>
+
+                <h2 class="detail-section-title">The Design Solution</h2>
+                <p class="detail-text">
+                    We designed an identity built on "Calculated Flow"—a precise, structural system reflecting movement
+                    and logic.
+                    <br>
+                    <strong>Linear Visual Language:</strong> Using clean lines and geometric patterns that suggest
+                    infrastructure and connectivity without being literal.
+                    <br>
+                    <strong>High-Performance Palette:</strong> A combination of slate greys and sharp cyan accents that
+                    feels professional, precise, and technologically advanced.
+                </p>
+            </div>
+        </section>
+
+        <section class="case-study-gallery">
+            <img src="img/itras.png" alt="ITRAS Gallery Image 1" class="gallery-img reveal full-width-gallery">
+        </section>
+    </main>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta" id="contact">
+        <a href="index.html#contact" class="cta-project-link">start a project</a>
+        <a href="#" class="back-home-link">home</a>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

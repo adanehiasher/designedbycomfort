@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap" rel="stylesheet">
+    <title>ilmihouse Case Study - DesignedByComfort</title>
+    <style>
+        .case-study-hero {
+            padding: 8rem 2rem 4rem;
+            background-color: var(--white);
+            text-align: left;
+        }
+
+        .case-study-hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .case-study-tag {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .case-study-title {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .case-study-main-image {
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+            border-radius: 0;
+            margin-bottom: 4rem;
+        }
+
+        .flagship-section {
+            padding: 0 !important;
+        }
+
+        .flagship-container {
+            max-width: 100% !important;
+            padding: 0 !important;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .case-study-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+            opacity: 0.6;
+        }
+
+        .case-study-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-detail-section {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .detail-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .case-study-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .full-width-gallery {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-title {
+                font-size: 3rem;
+            }
+
+            .case-study-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .case-study-main-image {
+                height: 50vh;
+                border-radius: 0;
+            }
+
+            .case-study-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width-gallery {
+                grid-column: span 1;
+            }
+
+            .gallery-img {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <div class="navbar-logo">
+                    <a href="index.html">
+                        <img src="img/dbc logo-blacl.svg" alt="dbc logo">
+                    </a>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="mobile-menu-header">
+                    <div class="navbar-logo">
+                        <a href="index.html">
+                            <img src="img/dbc logo-blacl.svg" alt="dbc logo">
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link mobile-nav-link">services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link mobile-nav-link">contact us</a>
+                </li>
+                <li class="mobile-menu-footer">
+                    <a href="index.html#contact" class="start-project-btn mobile-cta"
+                        style="text-decoration: none; display: block;">start a project</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <div class="time-display">
+                    <span id="nigeria-time">--:-- --</span>
+                </div>
+            </div>
+            <div class="hamburger">
+                <img src="img/menu.png" alt="menu">
+                <img src="img/close.png" alt="close">
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="case-study-hero">
+            <div class="case-study-hero-container">
+                <span class="case-study-tag reveal">Community & Arts</span>
+                <h1 class="case-study-title reveal">ilmihouse: Cultivating Creative Minds.</h1>
+            </div>
+        </section>
+
+        <section class="image-section flagship-section reveal">
+            <div class="image-container flagship-container">
+                <img src="img/ilmihouse.png" alt="ilmihouse Flagship Image" class="case-study-main-image">
+            </div>
+        </section>
+
+        <section class="case-study-grid reveal">
+            <div class="case-study-info">
+                <div class="info-item">
+                    <h4>Client</h4>
+                    <p>ilmihouse</p>
+                </div>
+                <div class="info-item">
+                    <h4>Year</h4>
+                    <p>2024</p>
+                </div>
+                <div class="info-item">
+                    <h4>Services</h4>
+                    <p>Social Enterprise Branding, Literary Arts Identity</p>
+                </div>
+            </div>
+            <div class="case-study-overview">
+                <p class="detail-text">
+                    ilmihouse is a social enterprise targeted at self-development and in turn the development of the
+                    community at large. Created as a centre for literary and creative arts, it provides free access
+                    to a broad selection of books.
+                </p>
+                <p class="detail-text">
+                    The platform supports a collaborative community of readers, writers and creative minds. It serves
+                    as a hub for the literary and creative industries, fostering a culture of knowledge-sharing and
+                    artistic expression.
+                </p>
+            </div>
+        </section>
+
+        <section class="case-study-detail-section reveal">
+            <div class="detail-container">
+                <h2 class="detail-section-title">The Design Challenge</h2>
+                <p class="detail-text">
+                    The challenge was to create an identity that felt intellectually stimulating yet warm and
+                    accessible to a diverse community.
+                    <br>
+                    <strong>Balancing Edge & Elegance:</strong> How do you represent a "creative hub" that is both
+                    a quiet library and a vibrant community space?
+                    <br>
+                    <strong>Social Growth:</strong> Designing a brand that communicates the message of self-development
+                    and community upliftment without appearing preachy.
+                </p>
+
+                <h2 class="detail-section-title">The Design Solution</h2>
+                <p class="detail-text">
+                    We developed a "Library of the Future" concept—an identity that bridges the gap between classic
+                    literature and modern creativity.
+                    <br>
+                    <strong>Open Visual System:</strong> Using whitespace and airy layouts that suggest room for growth,
+                    thought, and collaboration.
+                    <br>
+                    <strong>Literary Palette:</strong> A sophisticated mix of paper-whites, ink-blacks, and subtle
+                    gold accents that pays homage to the world of books while remaining contemporary and fresh.
+                </p>
+            </div>
+        </section>
+
+        <section class="case-study-gallery">
+            <img src="img/ilmihousee.png" alt="ilmihouse Gallery Image 1" class="gallery-img reveal">
+            <img src="img/ilmihouse.png" alt="ilmihouse Gallery Image 2" class="gallery-img reveal">
+        </section>
+    </main>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta" id="contact">
+        <a href="index.html#contact" class="cta-project-link">start a project</a>
+        <a href="#" class="back-home-link">home</a>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
