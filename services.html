@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap" rel="stylesheet">
+    <title>Services - DesignedByComfort</title>
+    <style>
+        .services-hero {
+            padding: 8rem 2rem 4rem;
+            background-color: var(--white);
+            text-align: left;
+        }
+
+        .services-hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-tag {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .services-main-title {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .services-intro-text {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-bottom: 4rem;
+            opacity: 0.8;
+        }
+
+        .service-detail-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 6rem;
+        }
+
+        .service-detail-item {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .service-detail-info h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .service-detail-info p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-detail-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .services-main-title {
+                font-size: 3rem;
+            }
+
+            .service-detail-item {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-detail-info h2 {
+                font-size: 2rem;
+            }
+
+            .services-hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <div class="navbar-logo">
+                    <a href="index.html">
+                        <img src="img/dbc logo-blacl.svg" alt="dbc logo">
+                    </a>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="mobile-menu-header">
+                    <div class="navbar-logo">
+                        <a href="index.html">
+                            <img src="img/dbc logo-blacl.svg" alt="dbc logo">
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link mobile-nav-link">services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link mobile-nav-link">contact us</a>
+                </li>
+                <li class="mobile-menu-footer">
+                    <a href="contact.html" class="start-project-btn mobile-cta"
+                        style="text-decoration: none; display: block;">start a project</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <div class="time-display">
+                    <span id="nigeria-time">--:-- --</span>
+                </div>
+            </div>
+            <div class="hamburger">
+                <img src="img/menu.png" alt="menu">
+                <img src="img/close.png" alt="close">
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="services-hero reveal">
+            <div class="services-hero-container">
+                <span class="services-tag">Our Capabilities</span>
+                <h1 class="services-main-title">We craft digital <br> excellence.</h1>
+                <p class="services-intro-text">
+                    From brand strategy to full-scale product development, we help visionary founders build the future
+                    of their industries through intentional design and technical precision.
+                </p>
+            </div>
+        </section>
+
+        <section class="service-detail-grid">
+            <!-- Service 1 -->
+            <div class="service-detail-item reveal">
+                <div class="service-detail-info">
+                    <h2>Brand Strategy & Positioning</h2>
+                    <p>
+                        We don't just create logos; we define the soul of your business. Our strategic approach involves
+                        deep market research, audience analysis, and competitive positioning to ensure your brand
+                        doesn't just fit in—it stands out.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">• Big Idea Development</li>
+                        <li style="margin-bottom: 10px;">• Positioning Strategy</li>
+                        <li style="margin-bottom: 10px;">• Brand Story & Strategic Narrative</li>
+                        <li style="margin-bottom: 10px;">• Tone & Voice</li>
+                        <li style="margin-bottom: 10px;">• Brand Personality</li>
+                        <li style="margin-bottom: 10px;">• Brand Tagline</li>
+                    </ul>
+                </div>
+                <div class="service-detail-image">
+                    <img src="img/cardone.jpg" alt="Brand Strategy">
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-detail-item reveal" style="direction: rtl;">
+                <div class="service-detail-info" style="direction: ltr;">
+                    <h2>Brand Identity & Design</h2>
+                    <p>
+                        Pure aesthetic power met with functional elegance. We create visual identities that are
+                        memorable, scalable, and timeless. Every pixel is placed with intention to communicate your
+                        brand's unique narrative.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">• Visual Identity Design</li>
+                        <li style="margin-bottom: 10px;">• Verbal Identity & Messaging</li>
+                        <li style="margin-bottom: 10px;">• Brand & Product Naming</li>
+                        <li style="margin-bottom: 10px;">• Sonic Identity</li>
+                        <li style="margin-bottom: 10px;">• Motion System Development</li>
+                        <li style="margin-bottom: 10px;">• Brand Architecture</li>
+                    </ul>
+                </div>
+                <div class="service-detail-image" style="direction: ltr;">
+                    <img src="img/cardtwo.jpg" alt="Brand Identity">
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-detail-item reveal">
+                <div class="service-detail-info">
+                    <h2>Web & Product Development</h2>
+                    <p>
+                        We turn complex ideas into seamless digital realities. Our development team focuses on creating
+                        high-performance, future-proof ecosystems that provide exceptional user experiences across all
+                        devices.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">• UI/UX Design</li>
+                        <li style="margin-bottom: 10px;">• Website Design & Development</li>
+                        <li style="margin-bottom: 10px;">• Mobile App Design</li>
+                        <li style="margin-bottom: 10px;">• Product Prototyping</li>
+                        <li style="margin-bottom: 10px;">• Digital Experience Design</li>
+                        <li style="margin-bottom: 10px;">• Content Management Systems</li>
+                    </ul>
+                </div>
+                <div class="service-detail-image">
+                    <img src="img/cardthree.jpg" alt="Web Development">
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Statement Section (Reused from index) -->
+        <section class="mission-section reveal">
+            <div class="mission-container">
+                <p class="mission-text">
+                    Our methodology fuses rigorous strategic insight with the courage to explore uncharted
+                    territory—delivering innovative solutions meticulously designed for lasting relevance and growth.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta" id="contact">
+        <a href="contact.html" class="cta-project-link">start a project</a>
+        <a href="index.html" class="back-home-link">home</a>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
