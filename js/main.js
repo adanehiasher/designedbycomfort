@@ -166,3 +166,46 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach(el => {
     revealObserver.observe(el);
 });
+
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submitBtn');
+        const formSuccess = document.getElementById('formSuccess');
+        const originalBtnText = submitBtn.textContent;
+
+        // Change button state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.7';
+
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Hide form and show success message
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Sorry, there was an error sending your message. Please try again or email us directly.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            submitBtn.style.opacity = '1';
+        }
+    });
+}

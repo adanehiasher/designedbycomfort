@@ -125,17 +125,25 @@
 
             .contact-info-item p,
             .contact-info-item a {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
 
             .contact-section {
                 padding: 6rem 1.5rem 3rem;
             }
+
+            .footer-cta {
+                padding: 4.2rem 1.5rem;
+            }
+        }
+
+        .footer-cta {
+            padding: 7rem 2rem;
         }
     </style>
 </head>
 
-<body>
+<body id="top">
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar-container">
@@ -201,7 +209,14 @@
                 </div>
 
                 <div class="contact-right reveal">
-                    <form class="contact-form">
+                    <form class="contact-form" id="contactForm"
+                        action="https://formsubmit.co/designedbycomfort@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Project Inquiry - DesignedByComfort">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honeypot" style="display:none">
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="What's your name?" required>
@@ -224,8 +239,13 @@
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about your project"
                                 required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
                     </form>
+                    <div id="formSuccess"
+                        style="display: none; padding: 2rem; background: #e8f5e9; border-radius: 8px; margin-top: 2rem; color: #2e7d32; text-align: center;">
+                        <h3 style="margin-bottom: 0.5rem;">Message Sent!</h3>
+                        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -233,7 +253,12 @@
 
     <!-- Footer CTA Section -->
     <section class="footer-cta" id="contact-footer">
-        <a href="#" class="back-home-link">Home</a>
+        <div class="footer-bottom">
+            <a href="#top" class="back-home-link">Home</a>
+            <a href="#top" class="footer-logo">
+                <img src="img/dbc logo white.svg" alt="DesignedByComfort Logo">
+            </a>
+        </div>
     </section>
 
     <script src="js/main.js"></script>

@@ -20,15 +20,111 @@ body {
 /* Scroll Reveal Animation Styles */
 .reveal {
   opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active,
+.reveal-scale.active {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  visibility: visible;
+}
+
+/* Staggered Reveal Logic - applies to children of .reveal-stagger */
+.reveal-stagger>* {
+  opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   visibility: hidden;
 }
 
-.reveal.active {
+.reveal-stagger.active>* {
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
+}
+
+/* Add delays for staggered effect in JS or CSS */
+.reveal-stagger.active>*:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.reveal-stagger.active>*:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.reveal-stagger.active>*:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.reveal-stagger.active>*:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.reveal-stagger.active>*:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+/* Hero Entrance Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterSpacing {
+  from {
+    letter-spacing: -0.05em;
+    opacity: 0;
+  }
+
+  to {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
+.hero-animate {
+  animation: fadeInUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.header-animate {
+  animation: letterSpacing 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 /* Variables */
@@ -434,17 +530,36 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.start-project-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.6s ease;
 }
 
 .start-project-btn:hover {
-  background-color: var(--primary-color);
-  transform: translateY(-2px);
+  background-color: #444;
+  transform: translateY(-4px) scale(1.02);
+}
+
+.start-project-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .start-project-btn:active {
-  transform: translateY(0);
+  transform: translateY(-2px) scale(0.98);
 }
 
 /* Hero Responsive */
@@ -1112,18 +1227,22 @@ span {
 }
 
 .service-card {
-  height: 440px;
-  /* Fixed height for visual consistency */
+  height: 480px;
+  /* Increased height slightly */
   background-size: cover;
   background-position: center;
   border-radius: 0;
   position: relative;
   display: flex;
   align-items: flex-end;
-  /* To hold content at bottom if any added later */
-  padding: 1.5rem;
+  padding: 2rem;
   overflow: hidden;
-  /* Optional: overlay for better text contrast if text is added later */
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: scale(0.98);
 }
 
 .service-card::after {
@@ -1133,8 +1252,13 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, transparent, #D6D6D6);
+  background: linear-gradient(to bottom, transparent, rgba(214, 214, 214, 0.8));
   z-index: 1;
+  transition: opacity 0.8s ease;
+}
+
+.service-card:hover::after {
+  opacity: 0.9;
 }
 
 /* Specific background images */
@@ -1168,6 +1292,11 @@ span {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-card:hover .service-content {
+  transform: translateY(-10px);
 }
 
 .service-content h3 {
@@ -1175,6 +1304,11 @@ span {
   font-weight: 400;
   margin-bottom: 0;
   color: var(--text-color) !important;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-card:hover .service-content h3 {
+  transform: translateX(10px);
 }
 
 .service-content p {
@@ -1182,6 +1316,12 @@ span {
   color: var(--text-color) !important;
   line-height: 1.5 !important;
   margin-bottom: 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.6s ease;
+}
+
+.service-card:hover .service-content p {
+  opacity: 1;
 }
 
 .service-content .case-study-btn {
@@ -1443,24 +1583,28 @@ span {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
 }
 
 .team-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-20px) scale(1.02);
 }
 
 .team-img {
   width: 100%;
   aspect-ratio: 4 / 4.25;
   object-fit: cover;
+  object-position: center 15%;
   border-radius: 12px;
   filter: grayscale(100%);
-  transition: filter 0.4s ease;
+  transition: filter 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: filter, transform;
 }
 
 .team-card:hover .team-img {
   filter: grayscale(0%);
+  transform: scale(1.01);
 }
 
 .team-info {
@@ -1666,7 +1810,7 @@ span {
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .back-home-link:hover {
@@ -1694,4 +1838,49 @@ span {
   .cta-project-link::after {
     height: 2px;
   }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+/* Footer Bottom Styles */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 2rem;
+}
+
+.footer-logo {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 0.7;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Parallax Effect */
+.parallax-image {
+  overflow: hidden;
+}
+
+.parallax-image img {
+  transform: translateY(0);
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
