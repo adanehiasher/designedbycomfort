@@ -1,3 +1,26 @@
+// Preloader Logic
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const body = document.body;
+
+    if (preloader) {
+        // Ensure preloader lasts for at least 2 seconds
+        const minimumDisplayTime = 2000;
+        const loadTime = Date.now() - performance.timing.navigationStart;
+        const remainingTime = Math.max(0, minimumDisplayTime - loadTime);
+
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            body.classList.remove('preloader-active');
+
+            // Remove preloader from DOM after fade-out transition
+            setTimeout(() => {
+                preloader.remove();
+            }, 800); // Matches the transition duration in CSS
+        }, remainingTime);
+    }
+});
+
 // Update Nigeria Time
 function updateNigeriaTime() {
     const options = {
